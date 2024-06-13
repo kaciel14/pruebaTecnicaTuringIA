@@ -15,6 +15,7 @@ import Form from 'react-bootstrap/Form'
 import {Home} from '../App'
 import { AuthenticationContext } from '../AuthProvider';
 import BasicAlert from '../Alerts'
+import { registerUser } from '../RegisterUser';
 
 function Login(){
 
@@ -65,11 +66,21 @@ function Login(){
         
     };
 
+    const handleRegister = async(e) =>{
+        e.preventDefault()
+
+        const success = await registerUser(username, password)
+
+        success ? window.location.reload() : setError([true, 'Operacion fallida.\n El usuario ya existe o la contraseña ingresada no contiene 8 carácteres.'])
+
+    }
+
     return(
         <div className='App'>
             <NavBar/>
             <br/><br/>
             <main className='container mt-5' style={{width: '400px'}}>
+            
             {error[0] && <BasicAlert text={error[1]}/>} {/* Muestra el mensaje de error */}
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -82,9 +93,11 @@ function Login(){
                         <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Submit
+                        Login
                     </Button>
                 </Form>
+
+                <Button variant="secondary" style={{marginTop: '100px'}} onClick={handleRegister}>Register</Button>
             </main>
         </div>    
     )

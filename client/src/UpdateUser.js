@@ -11,9 +11,9 @@ const Update = ({user, text}) => {
 
     const textParam = text
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    navigate(`/updateUser`, {state: {username}})
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate(`/updateUser`, {state: {username}})
   }
 
   return <Button variant='primary' onClick={handleClick}>{textParam}</Button>;
