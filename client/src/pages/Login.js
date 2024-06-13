@@ -14,12 +14,14 @@ import Axios from 'axios';
 import Form from 'react-bootstrap/Form'
 import {Home} from '../App'
 import { AuthenticationContext } from '../AuthProvider';
+import BasicAlert from '../Alerts'
 
 function Login(){
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const {isAuthenticated, updateAuthState} = useContext(AuthenticationContext)
+    const [error, setError] = useState([false, '']);
+    const {isAuthenticated, updateAuthState, isAdmin, updateAdminState} = useContext(AuthenticationContext)
     const navigate = useNavigate()
 
     const handleLogin = async (e) => {
@@ -35,12 +37,27 @@ function Login(){
                     updateAuthState(true)
                     console.log(isAuthenticated)
                     localStorage.setItem('authToken', 'your-auth-token');
-                    navigate('/')
-                    navigate('/')
+
+                    const adminValue = response.data.message[0].admin
                     
-                }else{
+                    if(adminValue === 1){
+                        
+                        updateAdminState(true)
+                        navigate('/admin')
+                        navigate('/admin')
+                    }else{
+                        updateAdminState(false)
+                        navigate('/')
+                        navigate('/')
+                    }
+                    
+                }else if(response.data.accepted === 'false'){
                     updateAuthState(false)
                     console.log('user not accepted')
+                    setError([true, 'Usuario o constraseña incorrectos'])
+                }else{
+                    console.log('error')
+                    setError([true, 'Faltan parametros en los campos'])
                 }
         }catch(err){
             console.error(err)
@@ -53,6 +70,7 @@ function Login(){
             <NavBar/>
             <br/><br/>
             <main className='container mt-5' style={{width: '400px'}}>
+            {error[0] && <BasicAlert text={error[1]}/>} {/* Muestra el mensaje de error */}
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

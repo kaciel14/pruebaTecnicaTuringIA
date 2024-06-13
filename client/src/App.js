@@ -14,11 +14,13 @@ import Axios from 'axios';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Visit from './VisitContinent'
 import Login from './pages/Login'
-import {AuthenticationContext, AuthenticationProvider} from './AuthProvider';
-import ProtectedRoute from './ProtectedRoute';
+import {AuthenticationContext} from './AuthProvider';
+import Admin from './pages/Admin';
+import EditForm from './pages/EditForm';
+
 
 function App() {
-  const {isAuthenticated} = useContext(AuthenticationContext)
+  const {isAuthenticated, isAdmin} = useContext(AuthenticationContext)
   return (
     <BrowserRouter>
         <Routes>
@@ -26,6 +28,8 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
           <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
+          <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
+          <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
         </Routes>
     </BrowserRouter>
   )
