@@ -2,15 +2,11 @@ import './App.css';
 import NavBar from './navbar';
 import ContinentPage from './pages/Continent'
 import React, { useState, useEffect, useContext, Navigate } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
-import Axios from 'axios';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Visit from './VisitContinent'
 import Login from './pages/Login'
