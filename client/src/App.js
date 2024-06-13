@@ -17,7 +17,8 @@ import Login from './pages/Login'
 import {AuthenticationContext} from './AuthProvider';
 import Admin from './pages/Admin';
 import EditForm from './pages/EditForm';
-
+import OverviewCountry from './pages/OverviewCountry'
+import CardText from 'react-bootstrap/esm/CardText';
 
 function App() {
   const {isAuthenticated, isAdmin} = useContext(AuthenticationContext)
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
+          <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
           <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
           <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
@@ -81,6 +83,38 @@ export const Home = ()=>{
           )}
         </section>
 
+        <section style={{marginTop: '150px', alignContent: 'center'}}>
+          <Row xs={3} md={3} className='g-5'>
+            <Col>
+              <Card style={{width: '400px', height: '160px'}} className='g-5'>
+                <Card.Body>
+                  <Card.Title>Kaciel Alejandro Benitez Ferral</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Ing. en Sistemas Computacionales</Card.Subtitle>
+                  <Card.Text>
+                    Página creada para Turing Inteligencia Artificial
+                  </Card.Text>
+                  <Card.Link href="https://github.com/kaciel14/pruebaTecnicaTuringIA">Repositorio de Github</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{width: '400px', height: '160px'}} className='g-5'>
+                <Card.Body>
+                  <Card.Title>Contacto</Card.Title>
+                  <Card.Text>
+                    +52-833-314-2130
+                  </Card.Text>
+                  <CardText>
+                    kacielbenitez@gmail.com
+                  </CardText>
+                </Card.Body>
+              </Card>
+            </Col>  
+          </Row>
+          
+        </section>
+        
+
         
       </div>
 
@@ -99,6 +133,11 @@ export const Home = ()=>{
 const Continent = ()=>{
   const {continent} = useParams()
   return(<ContinentPage continent={continent}/>)
+}
+
+const Country = ()=>{
+  const {continent, country} = useParams()
+  return(<OverviewCountry continent={continent} country={country}/>)
 }
 
 export default App;

@@ -12,6 +12,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Axios from 'axios';
 import Visit from '../VisitContinent';
+import VisitCountry from '../VisitCountry';
 
 function Continent(){
     const {continent} = useParams()
@@ -62,7 +63,7 @@ function Continent(){
                         <Card.Body>
                           <Card.Title>{val.name}</Card.Title>
                           <Card.Text>Capital: {val.capital}</Card.Text>
-                          <Visit text='Visitar'/>
+                          <VisitCountry text='Visitar' continent={val.continent} country={val.name}/>
                         </Card.Body>
                       </Card>
                     </Col>
