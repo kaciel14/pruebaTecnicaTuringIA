@@ -36,6 +36,7 @@ module.exports = {
       },
       {
         test: /\.css$/,  // Para procesar archivos CSS
+        include: path.resolve(__dirname, 'src'),
         use: ['style-loader', 'css-loader'],
       }
       // Más reglas de loaders según tus necesidades
