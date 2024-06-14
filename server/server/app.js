@@ -67,7 +67,7 @@ app.post('/addUser', (req, res)=>{
     console.log(username)
     if(!username || !password || !admin) return res.json({error: 'Faltan parametros'})
     
-    db.query('INSERT INTO table2024 VALUES (?, ? ,?);', [username, password, admin], (err, result)=>{
+    db.query('INSERT INTO table2024 VALUES (?, ?, ? ,?);', [Math.random(999),username, password, admin], (err, result)=>{
         if(err){
             return res.json({error: err})
         }else{
