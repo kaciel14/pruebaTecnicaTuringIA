@@ -107,5 +107,6 @@ app.delete('/deleteUser', (req, res)=> {
 })
 
 app.listen(port, ()=>{
+    console.log('iniciando...')
     console.log("Escuchando el puerto " + port)
 })
