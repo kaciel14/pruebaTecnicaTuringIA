@@ -26,7 +26,7 @@ function EditForm() {
             admin
         }
 
-        await Axios.put(`http://localhost:8080/updateUser`, params).then((response)=>{
+        await Axios.put(`https://pruebatecnicaturingia.onrender.com/updateUser`, params).then((response)=>{
             if(response.data.error){
                 console.log(response.data.error)
             }else if(response.data.message){

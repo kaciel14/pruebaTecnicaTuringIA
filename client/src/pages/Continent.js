@@ -27,11 +27,11 @@ function Continent(){
     const getPaises = ()=>{
 
         if(!continent){
-            Axios.get(`http://localhost:8080/countries`).then((response)=>{
+            Axios.get(`https://pruebatecnicaturingia.onrender.com/countries`).then((response)=>{
                 setCountries(response.data)
             })
         }else{
-            Axios.get(`http://localhost:8080/countries?continent=${continent}`).then((response)=>{
+            Axios.get(`https://pruebatecnicaturingia.onrender.com/countries?continent=${continent}`).then((response)=>{
                 setCountries(response.data)
             })
         }

@@ -13,7 +13,7 @@ const Delete = ({user, text}) => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    Axios.delete(`http://localhost:8080/deleteUser`, {data: {username}}).then((response)=>{
+    Axios.delete(`https://pruebatecnicaturingia.onrender.com/deleteUser`, {data: {username}}).then((response)=>{
         if(response.data.error){
             console.log(response.data.error)
         }else if(response.data.message){

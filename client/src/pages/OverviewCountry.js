@@ -24,7 +24,7 @@ const OverviewCountry = ()=>{
     useEffect(() => {
         const consultCountry = () => {
             if (country) {
-                Axios.get(`http://localhost:8080/countries/${country}`).then((response) => {
+                Axios.get(`https://pruebatecnicaturingia.onrender.com/countries/${country}`).then((response) => {
                     if (response.data.length > 0) {
                         setCountryInfo(response.data[0]);
                     }

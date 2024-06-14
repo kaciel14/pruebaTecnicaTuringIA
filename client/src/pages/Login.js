@@ -33,7 +33,7 @@ function Login(){
             password
         }
         try{
-            const response = await Axios.post(`http://localhost:8080/user`, data)
+            const response = await Axios.post(`https://pruebatecnicaturingia.onrender.com/user`, data)
                 if(response.data.accepted === 'true'){
                     updateAuthState(true)
                     console.log(isAuthenticated)

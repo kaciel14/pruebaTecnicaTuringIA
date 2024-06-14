@@ -7,7 +7,7 @@ export const registerUser = async (username, password)=>{
         password,
         admin: '0'
     }
-    const response = await Axios.post(`http://localhost:8080/addUser`, data)
+    const response = await Axios.post(`https://pruebatecnicaturingia.onrender.com/addUser`, data)
 
     console.log('El message es: '+response.data.message)
     if(response.data.message){

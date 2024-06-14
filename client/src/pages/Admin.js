@@ -21,7 +21,7 @@ function Admin(){
     
     const getUsers = ()=>{
 
-        Axios.get(`http://localhost:8080/users`).then((response)=>{
+        Axios.get(`https://pruebatecnicaturingia.onrender.com/users`).then((response)=>{
             setUsers(response.data.message)
         })
     }
