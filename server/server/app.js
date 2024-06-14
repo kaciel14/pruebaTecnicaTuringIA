@@ -35,7 +35,7 @@ app.get('/countries/:name', (req, res)=>{
 })
 
 app.get('/users', (req, res)=>{
-    db.query('SELECT * FROM user', (err, result)=>{
+    db.query('SELECT * FROM table2024', (err, result)=>{
         if(err){
             return res.json({error: err})
         }else{
