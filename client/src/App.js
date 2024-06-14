@@ -10,7 +10,7 @@ import Image from 'react-bootstrap/Image';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Visit from './VisitContinent'
 import Login from './pages/Login'
-import {AuthenticationContext} from './AuthProvider';
+import {AuthenticationContext, AuthenticationProvider} from './AuthProvider';
 import Admin from './pages/Admin';
 import EditForm from './pages/EditForm';
 import OverviewCountry from './pages/OverviewCountry'
