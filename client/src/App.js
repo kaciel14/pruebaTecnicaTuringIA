@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './navbar';
 import ContinentPage from './pages/Continent'
-import React, { useState, useEffect, useContext, Navigate } from 'react';
+import { useState, useEffect, useContext, Navigate } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import Axios from 'axios';
 import Button from 'react-bootstrap/esm/Button';
-import React,{ useState } from 'react';
+import { useState } from 'react';
 import '../App.css'
 import NavBar from '../navbar'
 import { useNavigate, useLocation } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import React,{ useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import Login from "./pages/Login";
 
 export const AuthenticationContext = createContext()
