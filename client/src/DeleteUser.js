@@ -17,7 +17,7 @@ const Delete = ({user, text}) => {
         if(response.data.error){
             console.log(response.data.error)
         }else if(response.data.message){
-            window.location.reload()
+            navigate('/admin')
             //return 'Eliminado con exito'
         }
     })
