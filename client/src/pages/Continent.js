@@ -24,14 +24,14 @@ function Continent(){
       }, []); 
   
     
-    const getPaises = ()=>{
+    const getPaises = async()=>{
 
         if(!continent){
-            Axios.get(`https://pruebatecnicaturingia.onrender.com/countries`).then((response)=>{
+            await Axios.get(`https://pruebatecnicaturingia.onrender.com/countries`).then((response)=>{
                 setCountries(response.data)
             })
         }else{
-            Axios.get(`https://pruebatecnicaturingia.onrender.com/countries?continent=${continent}`).then((response)=>{
+            await Axios.get(`https://pruebatecnicaturingia.onrender.com/countries?continent=${continent}`).then((response)=>{
                 setCountries(response.data)
             })
         }
