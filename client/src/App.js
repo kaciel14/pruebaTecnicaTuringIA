@@ -25,8 +25,8 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
           <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
-          <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
-          <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
+          <Route path="/countries" element={<Continent />} />
+          <Route path="/admin" element={<Admin/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
         </Routes>
     </BrowserRouter>
