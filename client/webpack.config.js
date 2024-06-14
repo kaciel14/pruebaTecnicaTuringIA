@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/index.js',  // Ruta de tu archivo de entrada principal
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')  // Ruta de salida del archivo empaquetado
+    path: path.resolve(__dirname, 'dist'),  // Ruta de salida del archivo empaquetado
+    publicPath: '/',
   },
   resolve: {
     fallback: {
@@ -17,6 +18,9 @@ module.exports = {
       "stream": require.resolve("stream-browserify"),
       "buffer": require.resolve("buffer/")
     }
+  },
+  devServer:{
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -30,6 +34,10 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.css$/,  // Para procesar archivos CSS
+        use: ['style-loader', 'css-loader'],
+      }
       // Más reglas de loaders según tus necesidades
     ]
   },
