@@ -2,11 +2,11 @@ const express = require('express');
 const countriesData = require('../countries.json')
 const cors = require('cors');
 const {db} = require('./databaseConnection');
-const { accepts } = require('express/lib/request');
+const {PORT} = require('./config')
 
 const app = express()
 
-port= 8080
+port= PORT
 countries = countriesData.data
 
 app.use(cors())
