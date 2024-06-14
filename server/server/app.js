@@ -49,7 +49,7 @@ app.post('/user', (req, res) => {
     if (!username || !password) {
         return res.json({ accepted: 'missed params' });
     }
-    db.query('SELECT username, admin FROM user WHERE username = ? AND password = ? ;', [username, password], (err, result) => {
+    db.query('SELECT username, admin FROM table2024 WHERE username = ? AND password = ? ;', [username, password], (err, result) => {
         if(err){
             res.json({accepted: 'error'})
         }else{
@@ -67,7 +67,7 @@ app.post('/addUser', (req, res)=>{
     console.log(username)
     if(!username || !password || !admin) return res.json({error: 'Faltan parametros'})
     
-    db.query('INSERT INTO user VALUES (?, ? ,?);', [username, password, admin], (err, result)=>{
+    db.query('INSERT INTO table2024 VALUES (?, ? ,?);', [username, password, admin], (err, result)=>{
         if(err){
             return res.json({error: err})
         }else{
@@ -83,7 +83,7 @@ app.put('/updateUser', (req, res)=>{
     const paramName = password ? 'password' : 'admin'
     const paramValue = password ? password : admin
 
-    db.query(`UPDATE user SET ${paramName} = ? WHERE username = ?;`, [paramValue, username], (err, result) => {
+    db.query(`UPDATE table2024 SET ${paramName} = ? WHERE username = ?;`, [paramValue, username], (err, result) => {
         if(err){
             return res.json({error: err})
         }else{
@@ -97,7 +97,7 @@ app.delete('/deleteUser', (req, res)=> {
 
     if(!username) return res.json({error: 'Especifica el usuario'})
     
-    db.query('DELETE FROM user WHERE username = ?;', [username], (err, result)=>{
+    db.query('DELETE FROM table2024 WHERE username = ?;', [username], (err, result)=>{
         if(err){
             return res.json({error: err})
         }else{
