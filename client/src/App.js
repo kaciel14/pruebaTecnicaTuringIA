@@ -25,9 +25,10 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
           <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
-          <Route path="/countries" element={<Continent />} />
-          <Route path="/admin" element={<Admin/>} />
+          <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
+          <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
     </BrowserRouter>
   )
@@ -134,6 +135,10 @@ const Continent = ()=>{
 const Country = ()=>{
   const {continent, country} = useParams()
   return(<OverviewCountry continent={continent} country={country}/>)
+}
+
+const NotFound = ()=>{
+  return(<h1>404 página no encontrada</h1>)
 }
 
 export default App;

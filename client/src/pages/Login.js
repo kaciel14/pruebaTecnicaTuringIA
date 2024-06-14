@@ -71,7 +71,7 @@ function Login(){
 
         const success = await registerUser(username, password)
 
-        success ? navigate('/login') : setError([true, 'Operacion fallida.\n El usuario ya existe o la contraseña ingresada no contiene 8 carácteres.'])
+        success ? window.location.reload() : setError([true, 'Operacion fallida.\n El usuario ya existe o la contraseña ingresada no contiene 8 carácteres.'])
 
     }
 
