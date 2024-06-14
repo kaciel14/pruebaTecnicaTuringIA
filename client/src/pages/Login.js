@@ -1,6 +1,6 @@
 import '../App.css';
 import NavBar from '../navbar';
-import { useState, useEffect, Navigate, useContext } from 'react';
+import React, { useState, useEffect, Navigate, useContext } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
