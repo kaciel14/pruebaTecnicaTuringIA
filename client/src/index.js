@@ -1,11 +1,14 @@
-
-import ReactDOM from 'react-dom'; // Importa desde 'react-dom' en lugar de 'react-dom/client'
 import App from './App';
+import React from 'react';
 import reportWebVitals from './reportWebVitals';
 import { AuthenticationProvider } from './AuthProvider';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
 // Utiliza ReactDOM.render para renderizar tu aplicación
-ReactDOM.render(
+root.render(
   <React.StrictMode> {/* React.StrictMode se usa para identificar problemas potenciales en la aplicación */}
     <AuthenticationProvider>
       <App />
