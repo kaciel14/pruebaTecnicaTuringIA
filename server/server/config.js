@@ -2,13 +2,13 @@ const dotenv = require('dotenv')
 
 dotenv.config();
 
-const DB_HOST = process.env.DB_HOST  || 'localhost';
-const DB_PORT = process.env.DB_PORT || '3306';
+const DB_HOST = process.env.DB_HOST  || 'roundhouse.proxy.rlwy.net';
+const DB_PORT = process.env.DB_PORT || '52282';
 const DB_USER = process.env.DB_USER || 'root';
-const DB_PASSWORD = process.env.DB_PASSWORD || 'superuser';
-const DB_DATABASE = process.env.DB_DATABASE || 'pruebaTecnica';
+const DB_PASSWORD = process.env.DB_PASSWORD || 'JoRnOOiFNHFWqXAQwRYkzmdYNNljuOAy';
+const DB_DATABASE = process.env.DB_DATABASE || 'railway';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080
 
 module.exports = {
     DB_HOST,
