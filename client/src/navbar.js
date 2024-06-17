@@ -23,7 +23,7 @@ function ColorSchemesExample() {
             <Navbar.Brand href="/">CountriesAPI</Navbar.Brand>
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/countries">Countries</Nav.Link>
+              <Nav.Link href="/continent/all">Countries</Nav.Link>
               <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
             </Nav>
           </Container>
