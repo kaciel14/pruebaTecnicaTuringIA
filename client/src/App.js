@@ -35,6 +35,7 @@ function App() {
 export const Home = ()=>{
 
   const continentsList = (['North America', 'South America', 'Europe', 'Asia', 'Africa', 'Oceana'])
+  const navigate = useNavigate()
 
   return(<div className="App">
 
@@ -47,7 +48,7 @@ export const Home = ()=>{
             <h1 class="text-center text-white">Países del mundo</h1>
             <p class="lead text-center text-white">Esta página te permite conocer informacion sobre los diferentes países que hay en el mundo.</p>
             <div class="text-center">
-              <a href="/continent/all" class="btn btn-light" style={{marginTop: '60px'}}>Ver todos</a>
+              <a onClick={navigate('/continent/all')} class="btn btn-light" style={{marginTop: '60px'}}>Ver todos</a>
             </div>
           </div>
         </section>

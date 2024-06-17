@@ -17,7 +17,7 @@ import VisitCountry from '../VisitCountry';
 function Continent(){
     const {continent} = useParams()
     const [countriesList, setCountries] = useState([])
-    const title = (!continent) ? 'Países del mundo' : continent
+    const title = (continent === 'all') ? 'Países del mundo' : continent
     console.log(continent)
 
     useEffect(() => {
