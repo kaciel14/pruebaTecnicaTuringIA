@@ -16,7 +16,7 @@ function ColorSchemesExample() {
         navigate('/login'); // Redirige a la página de inicio de sesión
     };
 
-    const navigateCountries = (){
+    const navigateCountries = ()=>{
       navigate('/continent/all')
     }
 
