@@ -18,6 +18,7 @@ function Continent(){
     const {continent} = useParams()
     const [countriesList, setCountries] = useState([])
     const title = (!continent) ? 'Países del mundo' : continent
+    console.log(continent)
 
     useEffect(() => {
         getPaises()

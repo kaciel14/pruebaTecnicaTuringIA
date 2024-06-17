@@ -27,7 +27,6 @@ function App() {
           <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
           <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
-          <Route path="*" element={<NotFound />} />
         </Routes>
     </BrowserRouter>
   )
