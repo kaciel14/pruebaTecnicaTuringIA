@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),  // Ruta de salida del archivo empaquetado
-    publicPath: '/',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx'],

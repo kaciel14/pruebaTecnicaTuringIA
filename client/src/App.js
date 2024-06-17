@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
           <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
-          <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
+          <Route path="/countries" element={isAuthenticated ? <CountriesList /> : <Login/>} />
           <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
           <Route path="*" element={<NotFound />} />
@@ -130,6 +130,10 @@ export const Home = ()=>{
 const Continent = ()=>{
   const {continent} = useParams()
   return(<ContinentPage continent={continent}/>)
+}
+
+const CountriesList = ()=>{
+  return(<ContinentPage/>)
 }
 
 const Country = ()=>{
