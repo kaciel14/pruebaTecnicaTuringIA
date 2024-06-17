@@ -42,6 +42,10 @@ module.exports = {
       // Más reglas de loaders según tus necesidades
     ]
   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',  // Ruta de tu archivo HTML de entrada

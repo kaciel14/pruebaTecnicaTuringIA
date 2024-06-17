@@ -11,8 +11,7 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(
     <AuthenticationProvider>
       <App />
-    </AuthenticationProvider>,
-  document.getElementById('root')
+    </AuthenticationProvider>
 );
 
 // Reportar métricas web vitales si es necesario
