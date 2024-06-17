@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
 import Axios from 'axios';
 import Form from 'react-bootstrap/Form'
 import {Home} from '../App'
-import { AuthenticationContext } from '../AuthProvider';
+//import { AuthenticationContext } from '../AuthProvider';
 import BasicAlert from '../Alerts'
 import { registerUser } from '../RegisterUser';
 
@@ -22,7 +22,7 @@ function Login(){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState([false, '']);
-    const {isAuthenticated, updateAuthState, isAdmin, updateAdminState} = useContext(AuthenticationContext)
+    //const {isAuthenticated, updateAuthState, isAdmin, updateAdminState} = useContext(AuthenticationContext)
     const navigate = useNavigate()
 
     const handleLogin = async (e) => {
@@ -35,25 +35,25 @@ function Login(){
         try{
             const response = await Axios.post(`https://pruebatecnicaturingia.onrender.com/user`, data)
                 if(response.data.accepted === 'true'){
-                    updateAuthState(true)
-                    console.log(isAuthenticated)
-                    localStorage.setItem('authToken', 'your-auth-token');
+                    //updateAuthState(true)
+                    //console.log(isAuthenticated)
+                    //localStorage.setItem('authToken', 'your-auth-token');
 
                     const adminValue = response.data.message[0].admin
                     
                     if(adminValue === 1){
                         
-                        updateAdminState(true)
+                        //updateAdminState(true)
                         navigate('/admin')
                         navigate('/admin')
                     }else{
-                        updateAdminState(false)
+                        //updateAdminState(false)
                         navigate('/')
                         navigate('/')
                     }
                     
                 }else if(response.data.accepted === 'false'){
-                    updateAuthState(false)
+                    //updateAuthState(false)
                     console.log('user not accepted')
                     setError([true, 'Usuario o constraseña incorrectos'])
                 }else{
