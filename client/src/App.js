@@ -133,7 +133,7 @@ const Continent = ()=>{
 }
 
 const CountriesList = ()=>{
-  return(<ContinentPage/>)
+  return(<ContinentPage continent={'all'}/>)
 }
 
 const Country = ()=>{

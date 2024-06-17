@@ -26,7 +26,7 @@ function Continent(){
     
     const getPaises = async()=>{
 
-        if(!continent){
+        if(continent === 'all'){
             await Axios.get('https://pruebatecnicaturingia.onrender.com/countries').then((response)=>{
                 setCountries(response.data)
             })
