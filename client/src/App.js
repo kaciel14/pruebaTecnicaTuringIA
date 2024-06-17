@@ -25,7 +25,6 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
           <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
           <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
-          <Route path="/continent/all" element={isAuthenticated ? <Continent /> : <Login/>} />
           <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
           <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
           <Route path="*" element={<NotFound />} />
