@@ -9,11 +9,9 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 
 // Utiliza ReactDOM.render para renderizar tu aplicación
 root.render(
-  <React.StrictMode> {/* React.StrictMode se usa para identificar problemas potenciales en la aplicación */}
     <AuthenticationProvider>
       <App />
-    </AuthenticationProvider>
-  </React.StrictMode>,
+    </AuthenticationProvider>,
   document.getElementById('root')
 );
 
