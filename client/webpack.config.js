@@ -10,6 +10,11 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+    },
     fallback: {
       "fs": false,  // o puedes usar require.resolve("fs")
       "path": require.resolve("path-browserify"),
@@ -20,7 +25,7 @@ module.exports = {
     }
   },
   devServer:{
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -37,7 +42,7 @@ module.exports = {
       {
         test: /\.css$/,  // Para procesar archivos CSS
         include: path.resolve(__dirname, 'src'),
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       }
       // Más reglas de loaders según tus necesidades
     ]

@@ -10,24 +10,24 @@ import Image from 'react-bootstrap/Image';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Visit from './VisitContinent'
 import Login from './pages/Login'
-//import {AuthenticationContext, AuthenticationProvider} from './AuthProvider';
+import {AuthenticationContext, AuthenticationProvider} from './AuthProvider';
 import Admin from './pages/Admin';
 import EditForm from './pages/EditForm';
 import OverviewCountry from './pages/OverviewCountry'
 import CardText from 'react-bootstrap/esm/CardText';
 
 function App() {
-  //const {isAuthenticated, isAdmin} = useContext(AuthenticationContext)
+  const {isAuthenticated, isAdmin} = useContext(AuthenticationContext)
   return (
     <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}/>
-          <Route path="/" element={<Home />}/>
-          <Route path="/continent/:continent" element={<Continent/>} />
-          <Route path="/continent/:continent/:country" element={<Country/>} />
-          <Route path="/countries" element={<Continent />} />
-          <Route path="/admin" element={<Admin/>} />
-          <Route path = "/updateUser" element={<EditForm/>}/>
+          <Route path="/" element={isAuthenticated ? <Home />: <Login/>}/>
+          <Route path="/continent/:continent" element={isAuthenticated ? <Continent/> : <Login/>} />
+          <Route path="/continent/:continent/:country" element={isAuthenticated ? <Country/> : <Login/>} />
+          <Route path="/countries" element={isAuthenticated ? <Continent />: <Login/>} />
+          <Route path="/admin" element={isAdmin ? <Admin/>: <Login/>} />
+          <Route path = "/updateUser" element={isAdmin ? <EditForm/>: <Login/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
     </BrowserRouter>
