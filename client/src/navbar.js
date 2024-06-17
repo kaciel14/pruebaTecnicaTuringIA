@@ -16,6 +16,10 @@ function ColorSchemesExample() {
         navigate('/login'); // Redirige a la página de inicio de sesión
     };
 
+    const navigateCountries = (){
+      navigate('/continent/all')
+    }
+
     return (
       <>
         <Navbar bg="light" data-bs-theme="light">
@@ -23,7 +27,7 @@ function ColorSchemesExample() {
             <Navbar.Brand href="/">CountriesAPI</Navbar.Brand>
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/continent/all">Countries</Nav.Link>
+              <Nav.Link onClick={navigateCountries}>Countries</Nav.Link>
               <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
             </Nav>
           </Container>
