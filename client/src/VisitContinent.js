@@ -13,7 +13,11 @@ const Visit = ({continent, text}) => {
     navigate(`/continent/${continentParam}`); 
   };
 
-  return <Button variant='primary' onClick={handleClick}>{textParam}</Button>;
+  if(continentParam === 'all'){
+    return <Button variant='light' onClick={handleClick}>{textParam}</Button>;
+  }else{
+    return <Button variant='primary' onClick={handleClick}>{textParam}</Button>;
+  }
 };
 
 export default Visit;

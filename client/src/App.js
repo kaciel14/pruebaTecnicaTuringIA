@@ -52,7 +52,7 @@ export const Home = ()=>{
             <h1 class="text-center text-white">Países del mundo</h1>
             <p class="lead text-center text-white">Esta página te permite conocer informacion sobre los diferentes países que hay en el mundo.</p>
             <div class="text-center">
-              <a onClick={navigateCountriesList} class="btn btn-light" style={{marginTop: '60px'}}>Ver todos</a>
+              <Visit continent={'all'} text={'Ver todos'}/>
             </div>
           </div>
         </section>
