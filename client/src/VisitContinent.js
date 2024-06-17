@@ -14,7 +14,7 @@ const Visit = ({continent, text}) => {
   };
 
   if(continentParam === 'all'){
-    return <Button variant='light' onClick={handleClick}>{textParam}</Button>;
+    return <Button variant='light' onClick={handleClick} style={{marginTop: '30px'}}>{textParam}</Button>;
   }else{
     return <Button variant='primary' onClick={handleClick}>{textParam}</Button>;
   }
